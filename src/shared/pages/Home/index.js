@@ -1,15 +1,11 @@
 import React, { useState } from 'react'
+import Form from 'react-forms-dx'
 
 import MetaTags from 'shared/components/common/MetaTags'
 
 import tracking from './tracking'
 import {
-  pageStyle,
-  logoStyle,
-  headingStyle,
-  textStyle,
-  ctaStyle,
-  flipStyle
+  pageStyle
 } from './style'
 
 const Home = () => {
@@ -21,19 +17,6 @@ const Home = () => {
     setShowModal(true)
     tracking('WELCOME_OPEN_MODAL')
   }
-
-  const onCloseModal = () => {
-    setShowModal(false)
-  }
-
-  const onFlipClick = () => {
-    setShowModal(false)
-    setShowSignup(!showSignup)
-
-    setTimeout(() => {
-      setShowModal(true)
-    }, 0)
-  }
   
   return (
     <div className='page' css={pageStyle}>
@@ -42,6 +25,8 @@ const Home = () => {
       <div>
         I got in
       </div>
+
+      <Form />
     </div>
   )
 }
